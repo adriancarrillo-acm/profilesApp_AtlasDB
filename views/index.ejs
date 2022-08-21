@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profiles</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>User Profiles</h1>
+    <ul class="users">
+        <% for(let i=0; i<info.length; i++) {%>
+        <li class="user">
+            <span class="Name"><%= info[i].name %></span>
+            <span class="Age"><%= info[i].age %></span>
+            <span class="State"><%= info[i].state %></span>
+        </li> <% } %> 
+    </ul>
+
+    <h2>Add a Profile:</h2>
+
+    <form action="/addprofile" method="POST">
+        <label for="input-name">Name:</label><br>
+        <input type="text" placeholder="Name" name="name" /><br>
+        <label for="Age">Age:</label><br>
+        <input type="text" placeholder="Age" name="age" /><br>
+        <label for="State">State:</label><br>
+        <input type="text" placeholder="State" name="state" /><br><br>
+        <input type="submit" value="Submit" />
+      </form> 
+
+
+
+
+
+</body>
