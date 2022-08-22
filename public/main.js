@@ -1,13 +1,5 @@
-const getButn = document.querySelector('#getButton');
-const editButn = document.querySelector('#editButton');
-const updateButn = document.querySelector('#updateButton');
 
-getButn.addEventListener("click", init)
-editButn.addEventListener("click", editProfile)
-updateButn.addEventListener("click", updateProfile)
-
-
-async function init() {
+/* async function init() {
     document.getElementById('name').textContent = 'John Wick';
     document.getElementById('email').textContent = 'John Wick@hotmail.com';
     document.getElementById('interests').textContent = 'fighting';
@@ -15,27 +7,30 @@ async function init() {
     const cont = document.getElementById('container');
     cont.style.display = 'block';
     getButn.style.display = 'none'
-};
+}; */
 
-async function updateProfile() {
-    const contEdit = document.getElementById('container-edit');
-    const cont = document.getElementById('container');
-
-    const payload = {
-        name: document.getElementById('input-name').value, 
-        email: document.getElementById('input-email').value, 
-        interests: document.getElementById('input-interests').value
-    };
-
-    document.getElementById('name').textContent = payload.name;
-    document.getElementById('email').textContent = payload.email;
-    document.getElementById('interests').textContent = payload.interests;
-
-    cont.style.display = 'block';
-    contEdit.style.display = 'none';
+async function addProfile() {
+    let inputName = document.getElementById('fName').value
+    let inputAge = document.getElementById('years').value
+    let inputState = document.getElementById('location').value
+    try {
+        const response = await fetch("addprofile", {
+            method: "post",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
+                name: inputName,
+                age: inputAge,
+                state: inputState,
+            })
+        })
+        location.reload()
+    }
+    catch (err){
+        console.error(err)
+    }
 }
 
-function editProfile() {
+/* function editProfile() {
     const contEdit = document.getElementById('container-edit');
     const cont = document.getElementById('container');
 
@@ -45,4 +40,4 @@ function editProfile() {
 
     cont.style.display = 'none';
     contEdit.style.display = 'block';
-}
+} */

@@ -21,6 +21,7 @@ const options = {
 }
 
 app.set("view engine", "ejs")
+app.use('/public', express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -98,8 +99,8 @@ app.post("/addprofile", (request,response)=>{
         age: request.body.age,
         state: request.body.state.toUpperCase()})
         .then((result) => {
-            console.log("Profle added!")
-            response.redirect("/")
+            console.log("Profile added!")
+            response.json("Profile added!!!")
         })
         .catch((error) => console.error(error))
     })

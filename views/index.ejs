@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Profiles</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="/public/style.css">
 </head>
 
 <body>
@@ -18,23 +18,24 @@
             <span class="Age"><%= info[i].age %>&nbsp;&nbsp;</span>
             <span class="State"><%= info[i].state %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
             <i class="fa-solid fa-trash-can"></i>
-        </li> <% } %> 
+        </li> <%} %> 
     </ul>
 
     <h2>Add a Profile:</h2>
 
-    <form action="/addprofile" method="POST">
+    <div class='user-input' id='addProfile'>
         <label for="input-name">Name:</label><br>
-        <input type="text" placeholder="Name" name="name" /><br>
+        <input type="text" placeholder="Name" id='fName' name="name" /><br>
         <label for="Age">Age:</label><br>
-        <input type="text" placeholder="Age" name="age" /><br>
+        <input type="text" placeholder="Age" id='years' name="age" /><br>
         <label for="State">State:</label><br>
-        <input type="text" placeholder="State" name="state" /><br><br>
-        <input type="submit" value="Add Profile" />
-      </form> 
-
-
-
+        <input type="text" placeholder="State" id='location' name="state" /><br><br>
+        <input type="submit" class='button' value="Add Profile" onclick="addProfile();" />
+    </div>
 
 
 </body>
+
+<script src='/public/main.js'></script>
+
+</html>
