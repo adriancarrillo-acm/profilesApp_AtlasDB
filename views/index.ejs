@@ -5,17 +5,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Profiles</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <h1>User Profiles</h1>
     <ul class="users">
-        <% for(let i=0; i<info.length; i++) {%>
+        <% for(let i=0; i < info.length; i++) {%>
         <li class="user">
-            <span class="Name"><%= info[i].name %></span>
-            <span class="Age"><%= info[i].age %></span>
-            <span class="State"><%= info[i].state %></span>
+            <span class="Name"><%= info[i].name %>&nbsp;&nbsp;</span>
+            <span class="Age"><%= info[i].age %>&nbsp;&nbsp;</span>
+            <span class="State"><%= info[i].state %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <i class="fa-solid fa-trash-can"></i>
         </li> <% } %> 
     </ul>
 
@@ -28,7 +30,7 @@
         <input type="text" placeholder="Age" name="age" /><br>
         <label for="State">State:</label><br>
         <input type="text" placeholder="State" name="state" /><br><br>
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Add Profile" />
       </form> 
 
 

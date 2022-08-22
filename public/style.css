@@ -3,11 +3,14 @@
     width: 80%;
 }
 .button {
-    width: 160px;
-    height: 45px;
-    border-radius: 6px;
-    font-size: 15px;
-    margin-top: 20px;
+    width: 82px;
+    height:22px;
+    border-radius: 2px;
+    font-size: 12px;
+    margin-top: 1px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #050505;
 }
 img {
     max-width: 100%;
@@ -38,12 +41,10 @@ display: none;
 display: none;
 }
 #container-edit input {
-    height: 25px;
+    height: 15.11px;
+    width: 162.22px;
+    font-size: 15px;
 }
 #container-edit hr {
     margin: 25px 0;
-}
-#container-edit input {
-    width: 195px;
-    font-size: 15px;
 }
