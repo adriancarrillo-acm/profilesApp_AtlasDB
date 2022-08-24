@@ -1,13 +1,30 @@
+const trashCan = document.querySelectorAll(".fa-trash-can")
 
-/* async function init() {
-    document.getElementById('name').textContent = 'John Wick';
-    document.getElementById('email').textContent = 'John Wick@hotmail.com';
-    document.getElementById('interests').textContent = 'fighting';
+Array.from(trashCan).forEach((Element) => {
+    Element.addEventListener("click", deleteProfile)
+})
 
-    const cont = document.getElementById('container');
-    cont.style.display = 'block';
-    getButn.style.display = 'none'
-}; */
+async function deleteProfile() {
+    const delName = this.parentNode.querySelector(".Name").innerText
+    const delAge = this.parentNode.querySelector(".Age").innerText
+    const delState = this.parentNode.querySelector(".State").innerText
+    try {
+        const response = await fetch("deleteprofile", {
+            method: "delete",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
+                Delname: delName,
+                Delage: delAge,
+                Delstate: delState
+            })
+        })
+        await response.json()
+        location.reload()
+    }
+    catch (err){
+        console.error(err)
+    }
+};
 
 async function addProfile() {
     let inputName = document.getElementById('fName').value
@@ -20,9 +37,10 @@ async function addProfile() {
             body: JSON.stringify({
                 name: inputName,
                 age: inputAge,
-                state: inputState,
+                state: inputState
             })
         })
+        await response.json()
         location.reload()
     }
     catch (err){

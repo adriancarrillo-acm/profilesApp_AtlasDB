@@ -99,8 +99,19 @@ app.post("/addprofile", (request,response)=>{
         age: request.body.age,
         state: request.body.state.toUpperCase()})
         .then((result) => {
+            console.log(`${request.body.name},  ${request.body.age},  ${request.body.state}`)
             console.log("Profile added!")
-            response.json("Profile added!!!")
+            response.json({ message: "Success" })
+        })
+        .catch((error) => console.error(error))
+    })
+//Delete profile
+app.delete("/deleteprofile", (request,response)=>{
+    User.deleteOne({name: request.body.Delname})
+        .then((result) => {
+            console.log(`${request.body.Delname},  ${request.body.Delage},  ${request.body.Delstate}`)
+            console.log("Profile deleted!")
+            response.json({ message: "Success" })
         })
         .catch((error) => console.error(error))
     })

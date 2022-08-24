@@ -14,11 +14,12 @@
     <ul class="users">
         <% for(let i=0; i < info.length; i++) {%>
         <li class="user">
-            <span class="Name"><%= info[i].name %>&nbsp;&nbsp;</span>
-            <span class="Age"><%= info[i].age %>&nbsp;&nbsp;</span>
-            <span class="State"><%= info[i].state %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span class="Name"><%= info[i].name %></span>
+            <span class="Age"><%= info[i].age %></span>
+            <span class="State"><%= info[i].state %></span>
             <i class="fa-solid fa-trash-can"></i>
-        </li> <%} %> 
+        </li> 
+        <% } %> 
     </ul>
 
     <h2>Add a Profile:</h2>
