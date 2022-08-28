@@ -86,7 +86,7 @@ mongoose.connect(dbURL, options).then(()=>{
 
 //Collection retrieval
 app.get("/", (request,response)=>{
-    collection.find({}).sort({age: 1}).toArray()
+    collection.find({}).sort({ name: 1 }).toArray()
     .then((data) => {response.render("index.ejs", {info: data}
     )})
     .catch((error) => console.error(error))
@@ -107,10 +107,29 @@ app.post("/addprofile", (request,response)=>{
     })
 //Delete profile
 app.delete("/deleteprofile", (request,response)=>{
-    User.deleteOne({name: request.body.Delname})
+    User.deleteOne({
+        name: request.body.Delname,
+        age: request.body.Delage,
+        state: request.body.Delstate
+    })
         .then((result) => {
             console.log(`${request.body.Delname},  ${request.body.Delage},  ${request.body.Delstate}`)
-            console.log("Profile deleted!")
+            console.log("Profile Deleted!")
+            response.json({ message: "Success" })
+        })
+        .catch((error) => console.error(error))
+    })
+
+//Delete Many
+app.delete("/deletemany", (request,response)=>{
+    User.deleteMany({
+        name: request.body.Delname,
+        age: request.body.Delage,
+        state: request.body.Delstate
+    })
+        .then((result) => {
+            console.log(`${request.body.Delname},  ${request.body.Delage},  ${request.body.Delstate}`)
+            console.log("Multiple Profiles Deleted!!")
             response.json({ message: "Success" })
         })
         .catch((error) => console.error(error))

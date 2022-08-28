@@ -1,8 +1,44 @@
 const trashCan = document.querySelectorAll(".fa-trash-can")
+const delSelection = document.querySelector(".DelButton")
+const delBox = document.querySelectorAll("#Selection")
 
 Array.from(trashCan).forEach((Element) => {
     Element.addEventListener("click", deleteProfile)
 })
+
+Array.from(delBox).forEach((Element) => {
+    Element.addEventListener("change", saveEvents)
+})
+
+function saveEvents(){
+    let checked = this.siblingNode.querySelectorAll(".deleteBbox:checked").innerText
+    console.log(checked)
+/*     checked.forEach((elem) => {
+        elem.parentElement.style.display = "none"
+    }) */
+}
+/*     let values = Array.from(delBox).filter(i => i.checked).map(i => i.value)
+    .forEach((Element) => {
+        document.querySelector("td.Name").innerText}) */
+
+
+async function saveValue(){
+   // let count = saveEvents()
+/*     let a = Array.from(count)
+    for( i=0; i < a.length; i++){
+        if(a[i] === 'on'){
+        console.log("Box Checked")
+        }
+        else{
+            console.log("hhhgugughuhg")
+        }
+    } */
+    //console.log(count)
+}
+
+
+delSelection.addEventListener("click", saveValue)
+
 
 async function deleteProfile() {
     const delName = this.parentNode.querySelector(".Name").innerText
@@ -24,7 +60,33 @@ async function deleteProfile() {
     catch (err){
         console.error(err)
     }
-};
+}
+
+async function deleteSelected() {
+    let values = saveValue()
+    for (let i=0; i < values.length; i++){
+    const delName = values.valName
+    const delAge = values.valAge
+    const delState = values.valState
+/*     try {
+        const response = await fetch("deletemany", {
+            method: "delete",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
+                Delname: delName,
+                Delage: delAge,
+                Delstate: delState
+            })
+        })
+    }
+    catch (err){
+        console.error(err)
+    }    
+    await response.json()
+    location.reload() */
+    console.log(`${delName}, ${delAge}, ${delState}`)
+}
+}
 
 async function addProfile() {
     let inputName = document.getElementById('fName').value
@@ -47,15 +109,3 @@ async function addProfile() {
         console.error(err)
     }
 }
-
-/* function editProfile() {
-    const contEdit = document.getElementById('container-edit');
-    const cont = document.getElementById('container');
-
-    document.getElementById('input-name').value = document.getElementById('name').textContent;
-    document.getElementById('input-email').value = document.getElementById('email').textContent;
-    document.getElementById('input-interests').value = document.getElementById('interests').textContent;
-
-    cont.style.display = 'none';
-    contEdit.style.display = 'block';
-} */

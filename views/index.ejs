@@ -11,27 +11,41 @@
 
 <body>
     <h1>User Profiles</h1>
-    <ul class="users">
-        <% for(let i=0; i < info.length; i++) {%>
-        <li class="user">
-            <span class="Name"><%= info[i].name %></span>
-            <span class="Age"><%= info[i].age %></span>
-            <span class="State"><%= info[i].state %></span>
-            <i class="fa-solid fa-trash-can"></i>
-        </li> 
-        <% } %> 
-    </ul>
+    <div>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>State</th>
+                <th>Delete</th>
+                <th>Select<br>
+                    All<br>
+                    <input type="checkbox" id="selectAll">
+                </th>
+            </tr>
+            <% for(let i=0; i < info.length; i++) {%>
+            <tr>
+                <td class="Name"><%= info[i].name %></td>
+                <td class="Age"><%= info[i].age %></td>
+                <td class="State"><%= info[i].state %></td>
+                <td class="fa-solid fa-trash-can"></td>
+                <td><input type="checkbox" class="deleteBox" id="Selection"></td>
+            </tr>
+            <% } %>
+        </table><br>
+        <input type="submit" class='DelButton' value="Delete Selected" onclick="deleteSelected();">
+    </div>
 
     <h2>Add a Profile:</h2>
 
     <div class='user-input' id='addProfile'>
         <label for="input-name">Name:</label><br>
-        <input type="text" placeholder="Name" id='fName' name="name" /><br>
+        <input type="text" placeholder="Name" id='fName' name="name"><br>
         <label for="Age">Age:</label><br>
-        <input type="text" placeholder="Age" id='years' name="age" /><br>
+        <input type="text" placeholder="Age" id='years' name="age"><br>
         <label for="State">State:</label><br>
-        <input type="text" placeholder="State" id='location' name="state" /><br><br>
-        <input type="submit" class='button' value="Add Profile" onclick="addProfile();" />
+        <input type="text" placeholder="State" id='location' name="state"><br><br>
+        <input type="submit" class='button' value="Add Profile" onclick="addProfile();">
     </div>
 
 

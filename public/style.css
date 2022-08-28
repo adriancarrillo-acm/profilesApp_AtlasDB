@@ -15,8 +15,21 @@
     background: #6f6f70;
     color: white;
 }
-/* #addProfile input {
-    height: 15.11px;
-    width: 162.22px;
-    font-size: 15px;
-} */
+
+.DelButton {
+    width: 120px;
+    height:22px;
+    border-radius: 2px;
+    font-size: 12px;
+    margin-left: 30px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #050505;
+}
+
+.DelButton:hover {
+    border: none;
+    cursor: pointer;
+    background: #6f6f70;
+    color: white;
+}
