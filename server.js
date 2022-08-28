@@ -123,13 +123,10 @@ app.delete("/deleteprofile", (request,response)=>{
 //Delete Many
 app.delete("/deletemany", (request,response)=>{
     User.deleteMany({
-        name: request.body.Delname,
-        age: request.body.Delage,
-        state: request.body.Delstate
+        name: request.body.Delname
     })
         .then((result) => {
-            console.log(`${request.body.Delname},  ${request.body.Delage},  ${request.body.Delstate}`)
-            console.log("Multiple Profiles Deleted!!")
+            console.log(`${request.body.Delname}`)
             response.json({ message: "Success" })
         })
         .catch((error) => console.error(error))

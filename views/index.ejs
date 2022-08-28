@@ -13,26 +13,28 @@
     <h1>User Profiles</h1>
     <div>
         <table>
-            <tr>
-                <th>Name</th>
-                <th>Age</th>
-                <th>State</th>
-                <th>Delete</th>
-                <th>Select<br>
-                    All<br>
-                    <input type="checkbox" id="selectAll">
-                </th>
-            </tr>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>State</th>
+                    <th>Delete</th>
+                    <th>Select<br>All<br><input type="checkbox" id="selectAll">
+                    </th>
+                </tr>
+            </thead>
+        </table>
+        <ul>
             <% for(let i=0; i < info.length; i++) {%>
-            <tr>
-                <td class="Name"><%= info[i].name %></td>
-                <td class="Age"><%= info[i].age %></td>
-                <td class="State"><%= info[i].state %></td>
-                <td class="fa-solid fa-trash-can"></td>
-                <td><input type="checkbox" class="deleteBox" id="Selection"></td>
-            </tr>
-            <% } %>
-        </table><br>
+                <li>
+                    <span class="Name"><%= info[i].name %></span>
+                    <span class="Age"><%= info[i].age %></span>
+                    <span class="State"><%= info[i].state %></span>
+                    <i class="fa-solid fa-trash-can"></i>
+                    <input type="checkbox" class="deleteBox" id="Selection">
+                </li>
+                <% } %>
+        </ul><br>
         <input type="submit" class='DelButton' value="Delete Selected" onclick="deleteSelected();">
     </div>
 

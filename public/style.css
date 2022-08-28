@@ -1,3 +1,6 @@
+ul {
+    list-style-type: none;
+}
 .button {
     width: 82px;
     height:22px;
