@@ -1,7 +1,5 @@
 let express = require('express');
 let app = express();
-/*let path = require('path');
-let fs = require('fs');*/
 let mongoose = require('mongoose')
 let { MongoClient, ServerApiVersion } = require('mongodb');
 let { Schema } = mongoose;
