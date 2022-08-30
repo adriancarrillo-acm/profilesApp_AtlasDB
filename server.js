@@ -126,7 +126,7 @@ app.delete("/deletemany", (request,response)=>{
         name: request.body.Delname
     })
         .then((result) => {
-            console.log(`${request.body.Delname}`)
+            console.log(`${request.body.Delname} deleted`)
             response.json({ message: "Success" })
         })
         .catch((error) => console.error(error))

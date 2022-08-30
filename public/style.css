@@ -1,5 +1,39 @@
+h1{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+h2{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.user-input{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items:stretch;
+    justify-content:space-between;
+    width: 40%;
+}
+tr{
+    display: flex;
+    align-items:center;
+    justify-content:space-between;
+}
 ul {
     list-style-type: none;
+    padding: 0% 3% 0 0;
+}
+.profiles {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.button:hover {
+    border: none;
+    cursor: pointer;
+    background: #6f6f70;
+    color: white;
 }
 .button {
     width: 82px;
@@ -11,12 +45,9 @@ ul {
     border-width: 1px;
     border-color: #050505;
 }
-
-.button:hover {
-    border: none;
-    cursor: pointer;
-    background: #6f6f70;
-    color: white;
+.deletionButton {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .DelButton {

@@ -1,5 +1,8 @@
 const trashCan = document.querySelectorAll(".fa-trash-can")
 const delBox = document.querySelectorAll("#Selection")
+const delAll = document.querySelector("#selectAll")
+
+delAll.addEventListener("change", allBoxes)
 
 Array.from(trashCan).forEach((Element) => {
     Element.addEventListener("click", deleteProfile)
@@ -15,21 +18,18 @@ function boxSelection(){
     return selectedBoxes
 }
 
-
-/* async function saveValue(){
-     let count = saveEvents()
-     let a = Array.from(count)
-    for( i=0; i < a.length; i++){
-        if(a[i] === 'on'){
-        console.log("Box Checked")
+function allBoxes(){
+    if(delAll.checked){
+        for(let i=0; i < delBox.length; i++){
+            delBox[i].checked=true;  
         }
-        else{
-            console.log("hhhgugughuhg")
+    }
+    else{
+        for(let i=0; i < delBox.length; i++){
+            delBox[i].checked=false;  
         }
-    } 
-    console.log(count) 
-} */
-
+    }
+}
 
 async function deleteProfile() {
     const delName = this.parentNode.querySelector(".Name").innerText
@@ -71,7 +71,6 @@ async function deleteSelected() {
             console.error(err)
         }
     }
-    console.log("Multiple Profiles Deleted!!")
     location.reload()
 }
 
