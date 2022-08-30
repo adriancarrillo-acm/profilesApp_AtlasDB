@@ -27,17 +27,15 @@
                 </tr>
             </thead>
         </table>
-        <ul class="list">
-            <% for(let i=0; i < info.length; i++) {%>
-                <li class="profiles">
-                    <span class="Name"><%= info[i].name %></span>
-                    <span class="Age"><%= info[i].age %></span>
-                    <span class="State"><%= info[i].state %></span>
-                    <i class="fa-solid fa-trash-can"></i>
-                    <input type="checkbox" class="deleteBox" id="Selection">
-                </li>
-                <% } %>
-        </ul><br>
+        <% for(let i=0; i < info.length; i++) {%>
+            <div class="profiles">
+                <span class="Name"><%= info[i].name %></span>
+                <span class="Age"><%= info[i].age %></span>
+                <span class="State"><%= info[i].state %></span>
+                <i class="fa-solid fa-trash-can"></i>
+                <input type="checkbox" class="deleteBox" id="Selection">
+            </div>
+            <% } %><br>
         <span class="deletionButton">
         <input type="submit" class='DelButton' value="Delete Selected" onclick="deleteSelected();">
         </span>

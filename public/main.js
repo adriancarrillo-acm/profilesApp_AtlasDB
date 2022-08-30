@@ -13,9 +13,13 @@ Array.from(delBox).forEach((Element) => {
 })
 
 function boxSelection(){
-    let selectedBoxes = Array.from(delBox).filter(i => i.checked)
+    let selectedNames = Array.from(delBox).filter(i => i.checked)
     .map(i => i.parentNode.querySelector(".Name").innerText)
-    return selectedBoxes
+    let selectedAges = Array.from(delBox).filter(i => i.checked)
+    .map(i => i.parentNode.querySelector(".Age").innerText)
+    let selectedStates = Array.from(delBox).filter(i => i.checked)
+    .map(i => i.parentNode.querySelector(".State").innerText)
+    return [selectedNames, selectedAges, selectedStates]
 }
 
 function allBoxes(){
@@ -54,15 +58,20 @@ async function deleteProfile() {
 }
 
 async function deleteSelected() {
-    let nameArray = boxSelection()
-    for(let i=0; i < nameArray.length; i++){
-        let delName = nameArray[i]
+    let [DelName, DelAge, DelState] = boxSelection()
+    
+     for(let i=0; i < DelName.length; i++){
+        let delName = DelName[i]
+        let delAge = DelAge[i]
+        let delState = DelState[i]
         try {
             const response = await fetch("deletemany", {
                 method: "delete",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify({
-                    Delname: delName
+                    Delname: delName,
+                    Delage: delAge,
+                    Delstate: delState
                 })
             })
             await response.json()
@@ -71,6 +80,7 @@ async function deleteSelected() {
             console.error(err)
         }
     }
+    console.log("Multiple Profiles Deleted!!")
     location.reload()
 }
 

@@ -7,26 +7,19 @@ h2{
 .user-input{
     font-family: 'Roboto Condensed', sans-serif;
 }
-.container{
-    display: flex;
-    flex-direction: column;
-    align-items:stretch;
-    justify-content:space-between;
-    width: 40%;
-}
-tr{
-    display: flex;
-    align-items:center;
-    justify-content:space-between;
-}
-ul {
-    list-style-type: none;
-    padding: 0% 3% 0 0;
+tr {
+    display: grid;
+    grid-template-columns: 0fr 1.7fr 2.3fr 2.2fr 3fr;
+    justify-items: end;
+    align-items: center;
+    justify-content: start;
 }
 .profiles {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    justify-items: stretch;
+    align-items: center;
+    width: 40%;
 }
 
 .button:hover {
@@ -48,6 +41,7 @@ ul {
 .deletionButton {
     display: flex;
     justify-content: flex-end;
+    width: 37%;
 }
 
 .DelButton {
