@@ -27,7 +27,7 @@ function boxSelection(){
             console.log("hhhgugughuhg")
         }
     } 
-    console.log(count) 
+     
 } */
 
 
