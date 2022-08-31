@@ -33,6 +33,7 @@
                 <span class="Age"><%= info[i].age %></span>
                 <span class="State"><%= info[i].state %></span>
                 <i class="fa-solid fa-trash-can"></i>
+                <i class="fa-solid fa-user-pen"></i>
                 <input type="checkbox" class="deleteBox" id="Selection">
             </div>
             <% } %><br>
@@ -41,9 +42,8 @@
         </span>
     </div>
 
-    <h2>Add a Profile:</h2>
-
     <div class='user-input' id='addProfile'>
+        <h2>Add a Profile:</h2>
         <label for="input-name">Name:</label><br>
         <input type="text" placeholder="Name" id='fName' name="name"><br>
         <label for="Age">Age:</label><br>
@@ -51,6 +51,16 @@
         <label for="State">State:</label><br>
         <input type="text" placeholder="State" id='location' name="state"><br><br>
         <input type="submit" class='button' value="Add Profile" onclick="addProfile();">
+    </div>
+    <div class='user-input' id='editProfile'>
+        <h2>Edit Profile:</h2>
+        <label for="input-name">Name:</label><br>
+        <input type="text" placeholder="Name" id='edName' name="name"><br>
+        <label for="Age">Age:</label><br>
+        <input type="text" placeholder="Age" id='edYears' name="age"><br>
+        <label for="State">State:</label><br>
+        <input type="text" placeholder="State" id='edLocation' name="state"><br><br>
+        <input type="submit" class='button' value="Submit" onclick="editProfile();">
     </div>
 
 

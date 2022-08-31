@@ -105,6 +105,19 @@ app.post("/addprofile", (request,response)=>{
         })
         .catch((error) => console.error(error))
     })
+//Edit a profile
+app.post("/addprofile", (request,response)=>{
+    User.replaceOne({
+        name: request.body.name,
+        age: request.body.age,
+        state: request.body.state.toUpperCase()})
+        .then((result) => {
+            console.log(`${request.body.name},  ${request.body.age},  ${request.body.state}`)
+            console.log("Profile added!")
+            response.json({ message: "Success" })
+        })
+        .catch((error) => console.error(error))
+    })
 //Delete profile
 app.delete("/deleteprofile", (request,response)=>{
     User.deleteOne({
