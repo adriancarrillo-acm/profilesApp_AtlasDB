@@ -24,10 +24,7 @@ function boxSelection(){
         console.log("Box Checked")
         }
         else{
-            console.log("hhhgugughuhg")
-        }
-    } 
-     
+            console.log("hhhgugug")}     
 } */
 
 

@@ -78,7 +78,7 @@ mongoose.connect(dbURL, options).then(()=>{
         console.log('Deleted documents =>', deleteResult);
     }
     catch(e){
-        console.error(e);
+        console
     } */
 
 
