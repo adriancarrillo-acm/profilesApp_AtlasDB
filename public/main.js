@@ -41,21 +41,17 @@ function allBoxes(){
 }
 
 function editingScreen(){
-    const userArray = [
+    let userArray = [
         this.parentNode.querySelector(".Name").innerText,
         this.parentNode.querySelector(".Age").innerText,
         this.parentNode.querySelector(".State").innerText
     ]
-    /*     const editName = this.parentNode.querySelector(".Name").innerText
-    const editAge = this.parentNode.querySelector(".Age").innerText
-    const editState = this.parentNode.querySelector(".State").innerText */
-    //userArray.push(editName, editAge, editState)
 
     const contOne = document.getElementById('addProfile')
     const contTwo = document.getElementById('editProfile')
     contOne.style.display = 'none'
     contTwo.style.display = 'block'
-
+    
     document.getElementById('edName').value = userArray[0]
     document.getElementById('edYears').value = userArray[1]
     document.getElementById('edLocation').value = userArray[2]
