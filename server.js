@@ -1,7 +1,5 @@
 let express = require('express');
 let app = express();
-/*let path = require('path');
-let fs = require('fs');*/
 let mongoose = require('mongoose')
 let { MongoClient, ServerApiVersion } = require('mongodb');
 let { Schema } = mongoose;
@@ -40,31 +38,6 @@ mongoose.connect(dbURL, options).then(()=>{
 }).catch((err)=>{
     throw err});
 
-//Add multiple data
-/*     try{
-        let addData = User.insertMany([
-            { name: "Millie" , age: 22, state: "NY" },
-            { name: "Nancy", age: 21, state: "FL" }, 
-            { name: "Jose", age: 31, state: "CA" },
-            { name: "Diego", age: 41, state: "TX" }
-        ])
-        console.log(`Users ${addData[0].name} & ${addData[1].name} added!`);
-    }
-    catch(e){
-        console.error(e);
-    }
-
-//Add one data set
-    try{
-        let addOne = User.create(
-            { name: "Adrian" , age: 29, state: "TX" }
-        )
-        console.log(`User ${addOne.name} added!`);
-    }
-    catch(e){
-        console.error(e);
-    } */
-
 //Update data
 /*     try{
         const updateResult = User.updateMany({ age: 31 }, { $set: { age: 10 } });
@@ -73,16 +46,6 @@ mongoose.connect(dbURL, options).then(()=>{
     catch(e){
         console.error(e);
     } */
-
-//Delete ALL data
- /*    try{
-        const deleteResult = collection.deleteMany({});
-        console.log('Deleted documents =>', deleteResult);
-    }
-    catch(e){
-        console.error(e);
-    } */
-
 
 //Collection retrieval
 app.get("/", (request,response)=>{
