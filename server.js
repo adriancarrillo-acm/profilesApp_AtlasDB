@@ -38,7 +38,7 @@ mongoose.connect(dbURL, options).then(()=>{
 }).catch((err)=>{
     throw err});
 
-//Add multiple data
+//Add multiple
 /*     try{
         let addData = User.insertMany([
             { name: "Millie" , age: 22, state: "NY" },

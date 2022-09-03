@@ -21,9 +21,7 @@ function boxSelection(){
      let a = Array.from(count)
     for( i=0; i < a.length; i++){
         if(a[i] === 'on'){
-        console.log("Box Checked")
-        }
-        else{}     
+        console.log("Box Checked")   
 } */
 
 /* async function saveValue(){
