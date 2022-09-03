@@ -1,7 +1,12 @@
+import { User } from './Models/Users.js';
+
 const trashCan = document.querySelectorAll(".fa-trash-can")
 const edit = document.querySelectorAll(".fa-user-pen")
 const delBox = document.querySelectorAll("#Selection")
 const delAll = document.querySelector("#selectAll")
+document.querySelector('.DelButton').addEventListener("click", deleteSelected)
+document.querySelector('#add').addEventListener("click", addProfile)
+document.querySelector('#edit').addEventListener("click", editProfile)
 
 
 delAll.addEventListener("change", allBoxes)
@@ -18,13 +23,17 @@ Array.from(delBox).forEach((Element) => {
 })
 
 function boxSelection(){
-    let selectedNames = Array.from(delBox).filter(i => i.checked)
-    .map(i => i.parentNode.querySelector(".Name").innerText)
-    let selectedAges = Array.from(delBox).filter(i => i.checked)
-    .map(i => i.parentNode.querySelector(".Age").innerText)
-    let selectedStates = Array.from(delBox).filter(i => i.checked)
-    .map(i => i.parentNode.querySelector(".State").innerText)
-    return [selectedNames, selectedAges, selectedStates]
+    return [
+        getvaluefromUserRow(".Name"),
+        getvaluefromUserRow(".Age"),
+        getvaluefromUserRow(".State")
+    ]
+}
+
+function getvaluefromUserRow(value) {
+    return Array.from(delBox)
+        .filter(i => i.checked)
+        .map(i => i.parentNode.querySelector(value).innerText)
 }
 
 function allBoxes(){
@@ -47,16 +56,23 @@ function editingScreen(){
         this.parentNode.querySelector(".State").innerText
     ]
 
+    let user = new User(userArray[0], userArray[1], userArray[2]) 
+
     const contOne = document.getElementById('addProfile')
     const contTwo = document.getElementById('editProfile')
     contOne.style.display = 'none'
     contTwo.style.display = 'block'
     
-    document.getElementById('edName').value = userArray[0]
-    document.getElementById('edYears').value = userArray[1]
-    document.getElementById('edLocation').value = userArray[2]
+    // document.getElementById('edName').value = userArray[0]
+    // document.getElementById('edYears').value = userArray[1]
+    // document.getElementById('edLocation').value = userArray[2]
     
-    return userArray
+    document.getElementById('edName').value = user.firstName
+    document.getElementById('edYears').value = user.age
+    document.getElementById('edLocation').value = user.state
+
+    //console.log(user)
+    return user
 }
 
 async function deleteProfile() {
@@ -132,10 +148,15 @@ async function addProfile() {
 
 }
 async function editProfile() {
-    let editInput = editingScreen()
-    let newName = document.getElementById('edName').value
-    let newAge = document.getElementById('edYears').value
-    let newState = document.getElementById('edLocation').value
+    // let editInput = editingScreen()
+    // let newName = document.getElementById('edName').value
+    // let newAge = document.getElementById('edYears').value
+    // let newState = document.getElementById('edLocation').value
+    let user = editingScreen()
+
+    // user.firsName = document.getElementById('edName').value
+    // user.age = document.getElementById('edYears').value
+    // user.state = document.getElementById('edLocation').value
 /*     try {
         const response = await fetch("editprofile", {
             method: "post",
@@ -152,6 +173,6 @@ async function editProfile() {
     catch (err){
         console.error(err)
     } */
-    console.log(editInput)
-    console.log(newName, newAge, newState)
+    console.log(user)
+    //console.log(newName, newAge, newState)
 }

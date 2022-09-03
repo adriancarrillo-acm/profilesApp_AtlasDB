@@ -28,7 +28,7 @@
             </thead>
         </table>
         <% for(let i=0; i < info.length; i++) {%>
-            <div class="profiles">
+            <div class="profiles" data-id='<%= info[i]._id %>'>
                 <span class="Name"><%= info[i].name %></span>
                 <span class="Age"><%= info[i].age %></span>
                 <span class="State"><%= info[i].state %></span>
@@ -38,7 +38,7 @@
             </div>
             <% } %><br>
         <span class="deletionButton">
-        <input type="submit" class='DelButton' value="Delete Selected" onclick="deleteSelected();">
+        <input type="submit" class='DelButton' value="Delete Selected">
         </span>
     </div>
 
@@ -50,7 +50,7 @@
         <input type="text" placeholder="Age" id='years' name="age"><br>
         <label for="State">State:</label><br>
         <input type="text" placeholder="State" id='location' name="state"><br><br>
-        <input type="submit" class='button' value="Add Profile" onclick="addProfile();">
+        <input type="submit" class='button' id='add' value="Add Profile">
     </div>
     <div class='user-input' id='editProfile'>
         <h2>Edit Profile:</h2>
@@ -60,12 +60,12 @@
         <input type="text" placeholder="Age" id='edYears' name="age"><br>
         <label for="State">State:</label><br>
         <input type="text" placeholder="State" id='edLocation' name="state"><br><br>
-        <input type="submit" class='button' value="Submit" onclick="editProfile();">
+        <input type="submit" class='button' id='edit' value="Submit">
     </div>
 
 
 </body>
 
-<script src='/public/main.js'></script>
+<script type='module' src='/public/main.js'></script>
 
 </html>
