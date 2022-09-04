@@ -1,4 +1,4 @@
-import { User } from './Models/Users.js';
+import { User } from './Models/Users.js'
 
 const trashCan = document.querySelectorAll(".fa-trash-can")
 const edit = document.querySelectorAll(".fa-user-pen")
@@ -71,8 +71,8 @@ function editingScreen(){
     document.getElementById('edYears').value = user.age
     document.getElementById('edLocation').value = user.state
 
-    //console.log(user)
-    return user
+    console.log(user)
+    //return user
 }
 
 async function deleteProfile() {

@@ -13,19 +13,21 @@ h2{
 #editProfile {
     display: none;
 }
+.container{
+    display: grid;
+    width: 40%;
+}
 tr {
     display: grid;
-    grid-template-columns: 0fr 2.2fr 1.5fr 2fr 3.38fr;
-    justify-items: end;
+    grid-template-columns: 1.1fr .58fr .9fr 1.5fr .67fr;
+    justify-items: start;
     align-items: center;
-    justify-content: start;
 }
 .profiles {
     display: grid;
     grid-template-columns: 1fr .5fr .8fr 0.4fr .5fr .8fr;
     justify-items: stretch;
     align-items: center;
-    width: 40%;
 }
 
 .button:hover {
