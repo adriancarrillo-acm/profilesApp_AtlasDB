@@ -19,8 +19,7 @@ function boxSelection(){
 /* async function saveValue(){
      let count = saveEvents()
      let a = Array.from(count)
-    for( i=0; i < a.length; i++){
-        if(a[i] === 'on') 
+    for( i=0; i < a.length; i++)
 } */
 
 /* async function saveValue(){
