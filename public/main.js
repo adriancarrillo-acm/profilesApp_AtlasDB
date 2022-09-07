@@ -15,11 +15,15 @@ function boxSelection(){
     return selectedBoxes
 }
 
-
 /* async function saveValue(){
      let count = saveEvents()
      let a = Array.from(count)
-    for( i=0; i < a.length; i++)
+    for( i=0; i < a.length; i++){
+        if(a[i] === 'on'){
+        console.log("Box Checked")
+        }
+        else{
+            console.log("hhhgugug")}     
 } */
 
 /* async function saveValue(){
