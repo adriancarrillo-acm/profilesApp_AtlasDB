@@ -1,5 +1,40 @@
-ul {
-    list-style-type: none;
+h1{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+h2{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.user-input{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+#addProfile{
+    display:block;
+}
+#editProfile {
+    display: none;
+}
+.container{
+    display: grid;
+    width: 40%;
+}
+tr {
+    display: grid;
+    grid-template-columns: 1.1fr .58fr .9fr 1.5fr .67fr;
+    justify-items: start;
+    align-items: center;
+}
+.profiles {
+    display: grid;
+    grid-template-columns: 1fr .5fr .8fr 0.4fr .5fr .8fr;
+    justify-items: stretch;
+    align-items: center;
+}
+
+.button:hover {
+    border: none;
+    cursor: pointer;
+    background: #6f6f70;
+    color: white;
 }
 .button {
     width: 82px;
@@ -11,12 +46,9 @@ ul {
     border-width: 1px;
     border-color: #050505;
 }
-
-.button:hover {
-    border: none;
-    cursor: pointer;
-    background: #6f6f70;
-    color: white;
+.deletionButton {
+    display: grid;
+    justify-content: end;
 }
 
 .DelButton {
@@ -24,7 +56,7 @@ ul {
     height:22px;
     border-radius: 2px;
     font-size: 12px;
-    margin-left: 30px;
+    margin-right: 30px;
     border-style: solid;
     border-width: 1px;
     border-color: #050505;

@@ -5,14 +5,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Profiles</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
 <link rel="stylesheet" href="/public/style.css">
 </head>
 
 <body>
     <h1>User Profiles</h1>
-    <div>
-        <table>
+    <div class="container">
+        <table class="table">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -24,35 +27,45 @@
                 </tr>
             </thead>
         </table>
-        <ul>
-            <% for(let i=0; i < info.length; i++) {%>
-                <li>
-                    <span class="Name"><%= info[i].name %></span>
-                    <span class="Age"><%= info[i].age %></span>
-                    <span class="State"><%= info[i].state %></span>
-                    <i class="fa-solid fa-trash-can"></i>
-                    <input type="checkbox" class="deleteBox" id="Selection">
-                </li>
-                <% } %>
-        </ul><br>
-        <input type="submit" class='DelButton' value="Delete Selected" onclick="deleteSelected();">
+        <% for(let i=0; i < info.length; i++) {%>
+            <div class="profiles" data-id='<%= info[i]._id %>'>
+                <span class="Name"><%= info[i].name %></span>
+                <span class="Age"><%= info[i].age %></span>
+                <span class="State"><%= info[i].state %></span>
+                <i class="fa-solid fa-trash-can"></i>
+                <i class="fa-solid fa-user-pen"></i>
+                <input type="checkbox" class="deleteBox" id="Selection">
+            </div>
+            <% } %><br>
+        <span class="deletionButton">
+        <input type="submit" class='DelButton' value="Delete Selected">
+        </span>
     </div>
 
-    <h2>Add a Profile:</h2>
-
     <div class='user-input' id='addProfile'>
+        <h2>Add a Profile:</h2>
         <label for="input-name">Name:</label><br>
         <input type="text" placeholder="Name" id='fName' name="name"><br>
         <label for="Age">Age:</label><br>
         <input type="text" placeholder="Age" id='years' name="age"><br>
         <label for="State">State:</label><br>
         <input type="text" placeholder="State" id='location' name="state"><br><br>
-        <input type="submit" class='button' value="Add Profile" onclick="addProfile();">
+        <input type="submit" class='button' id='add' value="Add Profile">
+    </div>
+    <div class='user-input' id='editProfile'>
+        <h2>Edit Profile:</h2>
+        <label for="input-name">Name:</label><br>
+        <input type="text" placeholder="Name" id='edName' name="name"><br>
+        <label for="Age">Age:</label><br>
+        <input type="text" placeholder="Age" id='edYears' name="age"><br>
+        <label for="State">State:</label><br>
+        <input type="text" placeholder="State" id='edLocation' name="state"><br><br>
+        <input type="submit" class='button' id='edit' value="Submit">
     </div>
 
 
 </body>
 
-<script src='/public/main.js'></script>
+<script type='module' src='/public/main.js'></script>
 
 </html>
