@@ -49,14 +49,14 @@ function allBoxes(){
     }
 }
 
-function editingScreen(){
+async function editingScreen(){
     let userArray = [
         this.parentNode.querySelector(".Name").innerText,
         this.parentNode.querySelector(".Age").innerText,
         this.parentNode.querySelector(".State").innerText
     ]
 
-    let user = new User(userArray[0], userArray[1], userArray[2]) 
+    let oldUser = new User(userArray[0], userArray[1], userArray[2]) 
 
     const contOne = document.getElementById('addProfile')
     const contTwo = document.getElementById('editProfile')
@@ -67,12 +67,13 @@ function editingScreen(){
     // document.getElementById('edYears').value = userArray[1]
     // document.getElementById('edLocation').value = userArray[2]
     
-    document.getElementById('edName').value = user.firstName
-    document.getElementById('edYears').value = user.age
-    document.getElementById('edLocation').value = user.state
+    document.getElementById('edName').value = oldUser.firstName
+    document.getElementById('edYears').value = oldUser.age
+    document.getElementById('edLocation').value = oldUser.state
 
-    console.log(user)
-    //return user
+    //console.log(user)
+    editProfile()
+    return oldUser
 }
 
 async function deleteProfile() {
@@ -148,12 +149,11 @@ async function addProfile() {
 
 }
 async function editProfile() {
-    // let editInput = editingScreen()
-    // let newName = document.getElementById('edName').value
-    // let newAge = document.getElementById('edYears').value
-    // let newState = document.getElementById('edLocation').value
-    let user = editingScreen()
+    let newName = document.getElementById('edName').value
+    let newAge = document.getElementById('edYears').value
+    let newState = document.getElementById('edLocation').value
 
+    let editInput = await editingScreen()
     // user.firsName = document.getElementById('edName').value
     // user.age = document.getElementById('edYears').value
     // user.state = document.getElementById('edLocation').value
@@ -173,6 +173,6 @@ async function editProfile() {
     catch (err){
         console.error(err)
     } */
-    console.log(user)
-    //console.log(newName, newAge, newState)
+    console.log(editInput)
+    console.log(newName, newAge, newState)
 }
