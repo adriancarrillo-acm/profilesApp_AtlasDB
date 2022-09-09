@@ -1,7 +1,7 @@
-import { User } from './Models/Users.js'
+import { user } from './Models users.js'
 
 const trashCan = document.querySelectorAll(".fa-trash-can")
-const edit = document.querySelectorAll(".fa-user-pen")
+const edit = document.querySelectorAll(".fa user-pen")
 const delBox = document.querySelectorAll("#Selection")
 const delAll = document.querySelector("#selectAll")
 document.querySelector('.DelButton').addEventListener("click", deleteSelected)
@@ -24,13 +24,13 @@ Array.from(delBox).forEach((Element) => {
 
 function boxSelection(){
     return [
-        getvaluefromUserRow(".Name"),
-        getvaluefromUserRow(".Age"),
-        getvaluefromUserRow(".State")
+        getvaluefromuserRow(".Name"),
+        getvaluefromuserRow(".Age"),
+        getvaluefromuserRow(".State")
     ]
 }
 
-function getvaluefromUserRow(value) {
+function getvaluefromuserRow(value) {
     return Array.from(delBox)
         .filter(i => i.checked)
         .map(i => i.parentNode.querySelector(value).innerText)
@@ -56,7 +56,7 @@ async function editingScreen(){
         this.parentNode.querySelector(".State").innerText
     ]
 
-    let oldUser = new User(userArray[0], userArray[1], userArray[2]) 
+    let olduser = new User(userArray[0], userArray[1], userArray[2]) 
 
     const contOne = document.getElementById('addProfile')
     const contTwo = document.getElementById('editProfile')
@@ -67,13 +67,13 @@ async function editingScreen(){
     // document.getElementById('edYears').value = userArray[1]
     // document.getElementById('edLocation').value = userArray[2]
     
-    document.getElementById('edName').value = oldUser.firstName
-    document.getElementById('edYears').value = oldUser.age
-    document.getElementById('edLocation').value = oldUser.state
+    document.getElementById('edName').value = olduser.firstName
+    document.getElementById('edYears').value = olduser.age
+    document.getElementById('edLocation').value = olduser.state
 
-    //console.log(user)
+    //console.log user)
     editProfile()
-    return oldUser
+    return olduser
 }
 
 async function deleteProfile() {
@@ -185,7 +185,7 @@ async function editProfile() {
 
 
 
-   // user.firsName = document.getElementById('edName').value
+    // user.firsName = document.getElementById('edName').value
     // user.age = document.getElementById('edYears').value
     // user.state = document.getElementById('edLocation').value
 /*     try {
@@ -201,6 +201,4 @@ async function editProfile() {
         await response.json()
         location.reload()
     }
-    catch (err){
-        console.error(err)
     } */
