@@ -73,7 +73,8 @@ app.delete("/deletemany", (request,response)=>{
         state: request.body.Delstate
     })
         .then((result) => {
-            console.log(`${request.body.Delname}, ${request.body.Delage}, ${request.body.Delstate} Deleted`)
+            console.log(`${request.body.Delname}, ${request.body.Delage}, ${request.body.Delstate}`)
+            console.log("Profile Deleted!")
             response.json({ message: "Success" })
         })
         .catch((error) => console.error(error))
