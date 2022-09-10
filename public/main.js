@@ -1,4 +1,4 @@
-import { User } from './Models/Users.js'
+let oldUser = {}
 
 const trashCan = document.querySelectorAll(".fa-trash-can")
 const edit = document.querySelectorAll(".fa-user-pen")
@@ -7,7 +7,6 @@ const delAll = document.querySelector("#selectAll")
 document.querySelector('.DelButton').addEventListener("click", deleteSelected)
 document.querySelector('#add').addEventListener("click", addProfile)
 document.querySelector('#edit').addEventListener("click", editProfile)
-
 
 delAll.addEventListener("change", allBoxes)
 
@@ -56,24 +55,18 @@ async function editingScreen(){
         this.parentNode.querySelector(".State").innerText
     ]
 
-    let oldUser = new User(userArray[0], userArray[1], userArray[2]) 
+    oldUser.firstName = userArray[0]
+    oldUser.Age = userArray[1]
+    oldUser.State = userArray[2] 
 
     const contOne = document.getElementById('addProfile')
     const contTwo = document.getElementById('editProfile')
     contOne.style.display = 'none'
     contTwo.style.display = 'block'
-    
-    // document.getElementById('edName').value = userArray[0]
-    // document.getElementById('edYears').value = userArray[1]
-    // document.getElementById('edLocation').value = userArray[2]
-    
-    document.getElementById('edName').value = oldUser.firstName
-    document.getElementById('edYears').value = oldUser.age
-    document.getElementById('edLocation').value = oldUser.state
 
-    //console.log(user)
-    editProfile()
-    return oldUser
+    document.getElementById('edName').value = oldUser.firstName
+    document.getElementById('edYears').value = oldUser.Age
+    document.getElementById('edLocation').value = oldUser.State
 }
 
 async function deleteProfile() {
@@ -149,11 +142,12 @@ async function addProfile() {
 
 }
 async function editProfile() {
+ 
     let newName = document.getElementById('edName').value
     let newAge = document.getElementById('edYears').value
-    let newState = document.getElementById('edLocation').value
+    let newState = document.getElementById('edLocation').value.toUpperCase()
 
-    let editInput = await editingScreen()
+    console.log(oldUser)
     // user.firsName = document.getElementById('edName').value
     // user.age = document.getElementById('edYears').value
     // user.state = document.getElementById('edLocation').value
@@ -173,7 +167,6 @@ async function editProfile() {
     catch (err){
         console.error(err)
     } */
-    console.log(editInput)
     console.log(newName, newAge, newState)
 }
 
