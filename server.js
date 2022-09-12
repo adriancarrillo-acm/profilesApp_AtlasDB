@@ -49,9 +49,6 @@ app.post("/editprofile", (request,response)=>{
             response.json({ message: "Success" })
         })
         .catch((error) => console.error(error))
-    // console.log(request.body.oldUser)
-    // console.log(request.body.update)
-    // response.json({ message: "Success" })
     })
 //Delete profile
 app.delete("/deleteprofile", (request,response)=>{

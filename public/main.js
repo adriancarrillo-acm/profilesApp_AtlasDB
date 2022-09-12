@@ -181,7 +181,5 @@ async function editProfile() {
                 state: inputState
             })
         })
-        await response.json()
-        location.reload()
     }
     } */
