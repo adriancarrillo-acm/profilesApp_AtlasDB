@@ -148,7 +148,7 @@ async function editProfile() {
     let update = {name: newName, age: newAge, state: newState}
     try {
         const response = await fetch("editprofile", {
-            method: "post",
+            method: "put",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({update, oldUser})
         })

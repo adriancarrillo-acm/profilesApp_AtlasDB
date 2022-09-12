@@ -38,12 +38,13 @@ app.post("/addprofile", (request,response)=>{
         .catch((error) => console.error(error))
     })
 //Edit a profile
-app.post("/editprofile", (request,response)=>{
+app.put("/editprofile", (request,response)=>{
     User.findOneAndUpdate(
         request.body.oldUser,
         request.body.update,
         {new: true})
         .then((result) => {
+            console.log(`Previous: ${request.body.oldUser.name}, ${request.body.oldUser.age}, ${request.body.oldUser.state}`)
             console.log(`Changed to: ${request.body.update.name}, ${request.body.update.age}, ${request.body.update.state}`)
             console.log("Profile Successfully Edited!")
             response.json({ message: "Success" })
