@@ -38,17 +38,20 @@ app.post("/addprofile", (request,response)=>{
         .catch((error) => console.error(error))
     })
 //Edit a profile
-app.post("/addprofile", (request,response)=>{
-    User.replaceOne({
-        name: request.body.name,
-        age: request.body.age,
-        state: request.body.state.toUpperCase()})
+app.post("/editprofile", (request,response)=>{
+    User.findOneAndUpdate(
+        request.body.oldUser,
+        request.body.update,
+        {new: true})
         .then((result) => {
-            console.log(`${request.body.name},  ${request.body.age},  ${request.body.state}`)
-            console.log("Profile added!")
+            console.log(`Changed to: ${request.body.update.name}, ${request.body.update.age}, ${request.body.update.state}`)
+            console.log("Profile Successfully Edited!")
             response.json({ message: "Success" })
         })
         .catch((error) => console.error(error))
+    // console.log(request.body.oldUser)
+    // console.log(request.body.update)
+    // response.json({ message: "Success" })
     })
 //Delete profile
 app.delete("/deleteprofile", (request,response)=>{
