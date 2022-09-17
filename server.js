@@ -99,3 +99,10 @@ app.delete("/deletemany", (request,response)=>{
         })
         .catch((error) => console.error(error))
     }) */
+    /* 
+app.delete("/deletemany", (request,response)=>{
+    User.deleteMany({
+        name: request.body.Delname,
+        age: request.body.Delage,
+        state: request.body.Delstate
+    })

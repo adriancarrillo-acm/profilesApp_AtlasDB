@@ -180,8 +180,4 @@ async function editProfile() {
 
 
 
-    // user.firsName = document.getElementById('edName').value
-    // user.age = document.getElementById('edYears').value
-    // user.state = document.getElementById('edLocation').value
-/*     try {
-        const response = await fetch("editprofile")
+   
