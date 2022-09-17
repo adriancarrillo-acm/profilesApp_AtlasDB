@@ -40,17 +40,17 @@ app.post("/addprofile", (request,response)=>{
 //Edit a profile
 app.put("/editprofile", (request,response)=>{
     User.findOneAndUpdate(
-        request.body.oldUser,
+        request.body.userToEdit,
         request.body.update,
         {new: true})
         .then((result) => {
-            console.log(`Previous: ${request.body.oldUser.name}, ${request.body.oldUser.age}, ${request.body.oldUser.state}`)
+            console.log(`Previous: ${request.body.userToEdit.name}, ${request.body.userToEdit.age}, ${request.body.userToEdit.state}`)
             console.log(`Changed to: ${request.body.update.name}, ${request.body.update.age}, ${request.body.update.state}`)
             console.log("Profile Successfully Edited!")
             response.json({ message: "Success" })
         })
         .catch((error) => console.error(error))
-    // console.log(request.body.oldUser)
+    // console.log(request.body.userToEdit)
     // console.log(request.body.update)
     // response.json({ message: "Success" })
     })

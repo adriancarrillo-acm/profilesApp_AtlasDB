@@ -8,7 +8,7 @@ document.querySelector('#edit').addEventListener("click", editProfile)
 
 delAll.addEventListener("change", allBoxes)
 
-let oldUser = {}
+let userToEdit = {}
 
 Array.from(trashCan).forEach((Element) => {
     Element.addEventListener("click", deleteProfile)
@@ -55,18 +55,18 @@ async function editingScreen(){
         this.parentNode.querySelector(".State").innerText
     ]
 
-    oldUser.name = userArray[0]
-    oldUser.age = userArray[1]
-    oldUser.state = userArray[2] 
+    userToEdit.name = userArray[0]
+    userToEdit.age = userArray[1]
+    userToEdit.state = userArray[2] 
 
     const contOne = document.getElementById('addProfile')
     const contTwo = document.getElementById('editProfile')
     contOne.style.display = 'none'
     contTwo.style.display = 'block'
 
-    document.getElementById('edName').value = oldUser.name
-    document.getElementById('edYears').value = oldUser.age
-    document.getElementById('edLocation').value = oldUser.state
+    document.getElementById('edName').value = userToEdit.name
+    document.getElementById('edYears').value = userToEdit.age
+    document.getElementById('edLocation').value = userToEdit.state
 }
 
 async function deleteProfile() {
@@ -150,7 +150,7 @@ async function editProfile() {
         const response = await fetch("editprofile", {
             method: "put",
             headers: {"Content-Type": "application/json"},
-            body: JSON.stringify({update, oldUser})
+            body: JSON.stringify({update, userToEdit})
         })
         await response.json()
         location.reload()

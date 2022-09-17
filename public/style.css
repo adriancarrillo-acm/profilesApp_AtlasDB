@@ -19,7 +19,7 @@ h2{
 }
 tr {
     display: grid;
-    grid-template-columns: 1.1fr .58fr .9fr 1.5fr .67fr;
+    grid-template-columns: .66fr .37fr .5fr .8fr .476fr;
     justify-items: start;
     align-items: center;
 }
