@@ -169,15 +169,4 @@ async function editProfile() {
         const response = await fetch("editprofile", {
             method: "post",
             headers: {"Content-Type": "application/json"},
-            body: JSON.stringify({
-                name: inputName,
-                age: inputAge,
-                state: inputState
-            })
-        })
-    }
-    } */
-
-
-
-   
+            body: JSON.stringify

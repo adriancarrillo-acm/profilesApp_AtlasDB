@@ -78,9 +78,4 @@ tr {
     border-width: 1px;
     border-color: #050505;
 }
-.DelButton:hover {
-    border: none;
-    cursor: pointer;
-    background: #6f6f70;
-    color: white;
-} */
+
