@@ -159,29 +159,3 @@ async function editProfile() {
         console.error(err)
     } 
 }
-
-
-
-
-
-
-
-
-
-    // user.firsName = document.getElementById('edName').value
-    // user.age = document.getElementById('edYears').value
-    // user.state = document.getElementById('edLocation').value
-/*     try {
-        const response = await fetch("editprofile", {
-            method: "post",
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify({
-                name: inputName,
-                age: inputAge,
-                state: inputState
-            })
-        })
-        await response.json()
-        location.reload()
-    }
-    } */

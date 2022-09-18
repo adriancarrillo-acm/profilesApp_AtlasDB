@@ -50,9 +50,6 @@ app.put("/editprofile", (request,response)=>{
             response.json({ message: "Success" })
         })
         .catch((error) => console.error(error))
-    // console.log(request.body.userToEdit)
-    // console.log(request.body.update)
-    // response.json({ message: "Success" })
     })
 //Delete profile
 app.delete("/deleteprofile", (request,response)=>{
