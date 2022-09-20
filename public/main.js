@@ -99,7 +99,7 @@ async function deleteSelected() {
         let delAge = DelAge[i]
         let delState = DelState[i]
         try {
-            const response = await fetch("deletemany", {
+            const response = await fetch("deleteprofile", {
                 method: "delete",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify({
@@ -122,7 +122,7 @@ async function deleteSelected() {
 async function addProfile() {
     let inputName = document.getElementById('fName').value
     let inputAge = document.getElementById('years').value
-    let inputState = document.getElementById('location').value
+    let inputState = document.getElementById('location').value.toUpperCase()
     try {
         const response = await fetch("addprofile", {
             method: "post",
