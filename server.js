@@ -29,7 +29,7 @@ app.post("/addprofile", (request,response)=>{
     User.create({
         name: request.body.name,
         age: request.body.age,
-        state: request.body.state.toUpperCase()})
+        state: request.body.state})
         .then((result) => {
             console.log(`${request.body.name},  ${request.body.age},  ${request.body.state}`)
             console.log("Profile added!")
@@ -38,12 +38,13 @@ app.post("/addprofile", (request,response)=>{
         .catch((error) => console.error(error))
     })
 //Edit a profile
-app.post("/editprofile", (request,response)=>{
+app.put("/editprofile", (request,response)=>{
     User.findOneAndUpdate(
-        request.body.oldUser,
+        request.body.userToEdit,
         request.body.update,
         {new: true})
         .then((result) => {
+            console.log(`Previous: ${request.body.userToEdit.name}, ${request.body.userToEdit.age}, ${request.body.userToEdit.state}`)
             console.log(`Changed to: ${request.body.update.name}, ${request.body.update.age}, ${request.body.update.state}`)
             console.log("Profile Successfully Edited!")
             response.json({ message: "Success" })
@@ -59,21 +60,6 @@ app.delete("/deleteprofile", (request,response)=>{
     })
         .then((result) => {
             console.log(`${request.body.Delname},  ${request.body.Delage},  ${request.body.Delstate}`)
-            console.log("Profile Deleted!")
-            response.json({ message: "Success" })
-        })
-        .catch((error) => console.error(error))
-    })
-
-//Delete Many
-app.delete("/deletemany", (request,response)=>{
-    User.deleteMany({
-        name: request.body.Delname,
-        age: request.body.Delage,
-        state: request.body.Delstate
-    })
-        .then((result) => {
-            console.log(`${request.body.Delname}, ${request.body.Delage}, ${request.body.Delstate}`)
             console.log("Profile Deleted!")
             response.json({ message: "Success" })
         })
