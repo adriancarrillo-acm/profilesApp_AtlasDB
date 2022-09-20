@@ -69,17 +69,3 @@ app.delete("/deleteprofile", (request,response)=>{
 app.listen(port, () => {
     console.log('Listening on port 3000!')
 })
-
-
-/* 
-app.delete("/deletemany", (request,response)=>{
-    User.deleteMany({
-        name: request.body.Delname,
-        age: request.body.Delage,
-        state: request.body.Delstate
-    })
-        .then((result) => {
-            console.log(`${request.body.Delname}, ${request.body.Delage}, ${request.body.Delstate}`)
-            console.log("Profile Deleted!")
-            response.json({ message: "Success" })
-        }
