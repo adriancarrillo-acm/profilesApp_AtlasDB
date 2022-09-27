@@ -68,3 +68,38 @@ tr {
     background: #6f6f70;
     color: white;
 }
+
+
+
+/* .button {
+    width: 82px;
+    height:22px;
+    border-radius: 2px;
+    font-size: 12px;
+    margin-top: 1px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #050505;
+}
+.deletionButton {
+    display: grid;
+    justify-content: end;
+}
+
+.DelButton {
+    width: 120px;
+    height:22px;
+    border-radius: 2px;
+    font-size: 12px;
+    margin-right: 30px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #050505;
+}
+
+.DelButton:hover {
+    border: none;
+    cursor: pointer;
+    background: #6f6f70;
+    color: white;
+} */

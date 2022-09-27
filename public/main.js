@@ -159,3 +159,46 @@ async function editProfile() {
         console.error(err)
     } 
 }
+
+
+
+/* 
+}
+async function editProfile() {
+    let newName = document.getElementById('edName').value
+    let newAge = document.getElementById('edYears').value
+    let newState = document.getElementById('edLocation').value.toUpperCase()
+    let update = {name: newName, age: newAge, state: newState}
+    try {
+        const response = await fetch("editprofile", {
+            method: "put",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({update, userToEdit})
+        })
+        await response.json()
+        location.reload()
+    }
+    catch (err){
+        console.error(err)
+    } 
+}
+
+}
+async function editProfile() {
+    let newName = document.getElementById('edName').value
+    let newAge = document.getElementById('edYears').value
+    let newState = document.getElementById('edLocation').value.toUpperCase()
+    let update = {name: newName, age: newAge, state: newState}
+    try {
+        const response = await fetch("editprofile", {
+            method: "put",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({update, userToEdit})
+        })
+        await response.json()
+        location.reload()
+    }
+    catch (err){
+        console.error(err)
+    } 
+} */
